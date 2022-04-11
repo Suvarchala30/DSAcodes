@@ -1,24 +1,27 @@
 import java.util.Scanner;
 
 public class selection {
-    static int[] selectionSort(int[] arr){
+    static void swap(int[] arr,int i,int j){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    static void selectionSort(int[] arr){
         int n=arr.length;
-        int[] sortedArray = new int[n];
-        int index = 0;
+        
 
         for(int i=0;i<n;i++){
-            int minIndex = 0;
-            for(int j=0;j<n;j++){
+            int minIndex = i;
+            for(int j=i;j<n;j++){
                 if(arr[minIndex]>arr[j]){
-                    minIndex=i;
+                    minIndex=j;
                 }
             }
-            sortedArray[index]=arr[minIndex];
-            index++;
-            arr[minIndex]=Integer.MAX_VALUE;
+           
+            swap(arr,i,minIndex);
 
         }
-        return sortedArray;
+        
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -27,7 +30,7 @@ public class selection {
         for(int i=0;i<n;i++){
             arr[i]=sc.nextInt();
         }
-       arr = selectionSort(arr);
+        selectionSort(arr);
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }

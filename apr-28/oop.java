@@ -1,6 +1,6 @@
 class Employee{
     //attributes
-    int employeeId;
+    int employeeId;//private int employeeid - doesn't allow to modify or use or print - to print this emp1.getName or emp1.getemployeeId should be used
     String name;
 
     //methods

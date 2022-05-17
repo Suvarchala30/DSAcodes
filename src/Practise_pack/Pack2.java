@@ -1,8 +1,7 @@
-package May_4.acces_modifier_1;
-public class Base {
-   
+package Practise_pack;
+
+public class Pack2 {
     public void msg(){
         System.out.println("Hello Suvarchala");
     }
 }
-
